@@ -87,7 +87,7 @@ class GestorDeTareas {
 
 // ===== Interfaz: manipulación del DOM =====
 const gestor = new GestorDeTareas();
-let editandoId = null; // id de la tarea que se está editando (o null)
+let editandoId = null; 
 
 const formulario = document.querySelector("#formulario-tarea");
 const entrada = document.querySelector("#nueva-tarea");
