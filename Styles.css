@@ -1,0 +1,67 @@
+/* Estilo simple en blanco y negro con fondo oscuro */
+:root {
+  --fondo: #111;
+  --texto: #fff;
+  --gris: #b5b5b8;
+  --tarjeta: #222;
+  --rojo: #ff8a8a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0; padding: 1.5rem 1rem;
+  background: var(--fondo); color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif; line-height: 1.5;
+}
+
+header, main { max-width: 40rem; margin: 0 auto; }
+
+h1 { font-size: 2.25rem; font-weight: 400; text-transform: uppercase; margin: 0 0 .5rem; }
+h1 strong { font-weight: 900; }
+h2 { font-size: 1.25rem; text-transform: uppercase; margin: 2rem 0 .5rem; }
+p { margin: 0 0 1rem; }
+
+label { display: block; font-weight: 700; margin-bottom: .4rem; }
+.fila { display: flex; gap: .5rem; }
+
+input[type="text"] {
+  flex: 1; min-width: 0; font: inherit; color: var(--texto); background: var(--tarjeta);
+  border: 2px solid var(--texto); border-radius: 999px; padding: .6rem 1rem;
+}
+
+button {
+  font: inherit; font-weight: 700; cursor: pointer;
+  border: 2px solid var(--texto); border-radius: 999px; padding: .5rem 1.2rem;
+  background: transparent; color: var(--texto);
+}
+button:hover { background: var(--texto); color: var(--fondo); }
+.boton { background: var(--texto); color: var(--fondo); }
+.boton:hover { background: var(--gris); border-color: var(--gris); }
+.eliminar { border-color: var(--rojo); color: var(--rojo); }
+.eliminar:hover { background: var(--rojo); color: var(--fondo); }
+
+:focus-visible { outline: 3px solid var(--texto); outline-offset: 3px; }
+
+.mensaje { min-height: 1.5rem; margin: .5rem 0 0; font-weight: 700; color: var(--rojo); }
+.mensaje.exito { color: var(--texto); }
+
+#contador, #vacio { color: var(--gris); }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.tarea { display: flex; align-items: center; gap: .75rem; background: var(--tarjeta); border-radius: 1rem; padding: .75rem 1rem; margin-bottom: .5rem; }
+.tarea.completa .nombre { text-decoration: line-through; color: var(--gris); }
+.tarea input[type="checkbox"] { width: 1.25rem; height: 1.25rem; accent-color: var(--texto); }
+.nombre { flex: 1; overflow-wrap: anywhere; }
+.acciones { display: flex; gap: .4rem; }
+.acciones button { padding: .3rem .8rem; font-size: .9rem; }
+
+/* Responsivo */
+@media (max-width: 30rem) {
+  h1 { font-size: 1.75rem; }
+  .fila { flex-direction: column; }
+  .tarea { flex-wrap: wrap; }
+  .nombre { flex-basis: calc(100% - 2.5rem); }
+  .acciones { width: 100%; }
+  .acciones button { flex: 1; }
+}
